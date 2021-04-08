@@ -1,4 +1,4 @@
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../layouts/projectCard';
@@ -6,49 +6,54 @@ import { Flex, title, yellow3, below, text,  } from '../utilities';
 
 const Projects = () => {
     const data = useStaticQuery(graphql`
-        query {
-            allMarkdownRemark( filter: { fileAbsolutePath: { regex: "/projects/" } } )
-            edges {
-                node {
-                    frontmatter {
-                        title
-                        tech
-                        image
-                        openLink
-                        gitLink
-                        alt
-                        info
+        query Projects {
+            allMarkdownRemark(filter: {fileAbsolutePath: { regex: "/projects/"}}) {
+                edges {
+                    node {
+                        
+                        frontmatter {
+                            alt
+                            gitLink
+                            image
+                            info
+                            openLink
+                            tech
+                            title
+                            }
+                        excerpt
+                        }
                     }
-                    html
-                }
             }
         }
     `);
 
     const highlights = data.allMarkdownRemark.edges.filter(
-        ({ node }) => node
-    ) 
+        ({node}) => node
+    )
+    
     return ( 
        
-            <ProjectBack>
+            <>
                 <Headline>My work</Headline>
                 <SubLine>Click card for more info</SubLine>
                 <Note>Some projects are hosted on heroku and may take several seconds to load.</Note>
                 <CardGroup>
-                {highlights.map((project, idx) =>
-                    <ProjectCard 
+                {highlights && highlights.map(({node}, idx) => {
+                    const {excerpt, frontmatter } = node;
+                    const { alt, gitLink, image, info, openLink, tech, title } = frontmatter;
+                    return (<ProjectCard 
                         key={idx}
-                        title={project.title}
-                        description={project.description}
-                        image={project.image}
-                        openLink={project.openLink}
-                        gitLink={project.gitLink}
-                        alt={project.alt}
-                        info={project.info}
-                    />
-                )}
+                        title={title}
+                        description={excerpt}
+                        image={image}
+                        openLink={openLink}
+                        gitLink={gitLink}
+                        alt={alt}
+                        info={info}
+                    />)
+                })}
                 </CardGroup>
-            </ProjectBack>
+            </>
      );
 }
  
