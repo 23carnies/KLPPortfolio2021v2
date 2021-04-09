@@ -1,12 +1,34 @@
 import React from 'react';
 import { FiGithub } from '@react-icons/all-files/fi/FiGithub';
 import { AiOutlineLinkedin } from '@react-icons/all-files/ai/AiOutlineLinkedin';
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
 import { FaRegFilePdf } from '@react-icons/all-files/fa/FaRegFilePdf';
 import { BiMailSend } from '@react-icons/all-files/bi/BiMailSend';
+import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu';
 import { IconContext } from '@react-icons/all-files/';
-import { white, box_shadow2, Flex, below } from '../utilities';
+import { white, black, box_shadow2, Flex, below } from '../utilities';
 import styled, { css } from 'styled-components';
 
+
+export const Close = () => {
+  return (
+    <IconContext.Provider 
+      value={{ size: '30px', color: `${black}`}}
+    >
+      <AiOutlineClose />
+    </IconContext.Provider>
+  )
+}
+
+export const Hamburger = () => {
+  return (
+    <IconContext.Provider 
+      value={{ size: '30px', color: `${black}`}}
+    >
+      <GiHamburgerMenu />
+    </IconContext.Provider>
+  )
+}
 
 export const LgGithub = () => {
   return ( 
