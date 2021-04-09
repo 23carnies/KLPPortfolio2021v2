@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import kpLogo from '../../images/logo.svg';
 import { Link } from 'gatsby';
 import {
+  backgroundColor,
+  textColor,
   Flex,
   navItem,
   below,
@@ -14,8 +16,8 @@ import {
 
 
 
-const HeaderNav = () => {
-    const [isNavOpen, setNavOpen] = useState(false);
+const HeaderNav = ({ isNavOpen, setNavOpen }) => {
+    
       
     return ( 
         <Nav>
@@ -41,7 +43,7 @@ export default HeaderNav;
 const Nav = styled.div`
   padding: 2% 2rem;
   ${Flex({jc:'space-between',ai:'center',fw:'nowrap'})};
-  background: ${black};
+  background: ${backgroundColor};
   height: 130px;
   ${below.xXLarge`
     ${Flex({ai:'center',fw:'nowrap'})}
@@ -82,6 +84,7 @@ const Name = styled(Link)`
   padding: 0 1%;
   margin: 0 1%;
   font: ${nameplate};
+  color: ${textColor};
   text-decoration: none;
   ${below.xXLarge`
   font-size: 2.3rem;
@@ -107,7 +110,7 @@ ${below.large`
 
 const NavMenu = styled.div`
   ${Flex({jc:'space-between',ai:'center'})};
-  background: ${black};
+  background: ${backgroundColor};
   ${below.large`
     overflow: hidden;
     flex-direction: column;
@@ -131,7 +134,7 @@ const Hamburger = styled.div`
   span {
     height: 3px;
     width: 35px;
-    background: ${white};
+    background: ${textColor};
     margin-bottom: 8px;
     border-radius: 5px;
     ${below.small`
@@ -158,14 +161,14 @@ const Hamburger = styled.div`
 
 const NavItem = styled(Link)`
   font: ${navItem};
-  color: ${white};
+  color: ${textColor};
   text-decoration: none;
   text-transform: uppercase;
   padding: 1rem 30px;
   cursor: pointer;
 
   :hover {
-    border-bottom: 3px solid ${white};
+    border-bottom: 3px solid ${textColor};
     transition: 0.3s ease border;
   };
 

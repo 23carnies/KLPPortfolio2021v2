@@ -1,15 +1,17 @@
-import React from "react";
- import PropTypes from "prop-types";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+ 
  // import { useStaticQuery, graphql } from "gatsby"
  
  import HeaderNav from './nav';
  import Footer from "./footer"
  
  const Layout = ({ children }) => {
+  const [isNavOpen, setNavOpen] = useState(false);
    
    return (
      <>
-       <HeaderNav />
+       <HeaderNav isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
        <main>
          {children}
        </main>
