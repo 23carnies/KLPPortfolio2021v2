@@ -17,11 +17,11 @@ const Menu = ({isNavOpen, setNavOpen}) => {
             <button onClick={() => setNavOpen(false)}>
                 <Close />
             </button>
-            <ul>
-                <li><Link onClick={() => setNavOpen(false)} to="/#about">About</Link></li>
-                <li><Link onClick={() => setNavOpen(false)} to="/#projects">Projects</Link></li>
-                <li><Link onClick={() => setNavOpen(false)} to="/#contact">Contact</Link></li>
-            </ul>
+            <List>
+                <li><NavItem onClick={() => setNavOpen(false)} to="/#about">About</NavItem></li>
+                <li><NavItem onClick={() => setNavOpen(false)} to="/#projects">Projects</NavItem></li>
+                <li><NavItem onClick={() => setNavOpen(false)} to="/#contact">Contact</NavItem></li>
+            </List>
         </animated.div>
     )
 }
@@ -31,12 +31,12 @@ export default Menu;
 const List = styled.ul`
     list-style-type: none;
     li {
-        padding: 20px;
-        margin: 0 auto;
+
     }
     `;
 
-const NavItem = styled(Link)`
-    color: ${black};
+export const NavItem = styled(Link)`
     text-decoration: none;
+    color: white;
+    padding: 20px;
 `;
