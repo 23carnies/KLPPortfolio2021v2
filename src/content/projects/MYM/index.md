@@ -9,7 +9,7 @@ tech:
   - Nodemailer
   - Full Calendar React
   - JWT OAuth
-image: 'https://i.imgur.com/t7IPbkV.png',
+image: 'https://i.imgur.com/t7IPbkV.png'
 openLink: 'https://meetyourmaker925.herokuapp.com/'
 gitLink: 'https://github.com/23carnies/MeetYourMakerCoupled'
 alt: 'Logo for Meet Your Maker'
