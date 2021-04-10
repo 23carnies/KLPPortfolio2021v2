@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, box_shadow2, white, black, below } from '../utilities';
+import { Flex, white, black, below } from '../utilities';
 import { LgGithub, LgLinkedIn, LgPDF } from '../utilities/icons';
 
  

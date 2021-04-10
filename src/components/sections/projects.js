@@ -59,12 +59,6 @@ const Projects = () => {
  
 export default Projects;
 
-const ProjectBack = styled.article`
-    ${Flex({fd:'column'})}
-    padding: 0 0 8%;
-    overflow: hidden;
-`;
-
 const Headline = styled.h3`
     text-align: center;
     font-family: ${title};

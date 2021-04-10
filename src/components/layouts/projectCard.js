@@ -2,7 +2,7 @@ import React, { useState,  } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled, { css } from 'styled-components';
 
-import { Flex, boxshadow4, black, below, white, violet, mauve, cardBorder, box_shadow3, boldType } from '../utilities';
+import { Flex, boxshadow4, below, white, violet, mauve, cardBorder, box_shadow3 } from '../utilities';
 
 const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }) => {
     const [cardFlip, setCardFlip] = useState(false);

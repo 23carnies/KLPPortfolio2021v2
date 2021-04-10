@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { useSpring, animated } from 'react-spring';
 import { Close } from '../utilities/Icons';
-import { black } from '../utilities';
 
 const Menu = ({isNavOpen, setNavOpen}) => {
     const menuAnime = useSpring({

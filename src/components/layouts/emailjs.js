@@ -2,7 +2,7 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 
-import { Flex, yellow3, black, grey, mauve, smLabel, white, label, box_shadow4, btn_active, below } from '../utilities';
+import { Flex, yellow3, grey, mauve, smLabel, white, label, box_shadow4, btn_active, below } from '../utilities';
 
 export default function ContactMe() {
 
