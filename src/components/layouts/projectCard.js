@@ -2,7 +2,7 @@ import React, { useState,  } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled, { css } from 'styled-components';
 
-import { Flex, boxshadow4, below, white, violet, mauve, cardBorder, box_shadow3 } from '../utilities';
+import { Flex, box_shadow4, below, white, violet, mauve, cardBorder, box_shadow3 } from '../utilities';
 
 const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }) => {
     const [cardFlip, setCardFlip] = useState(false);
@@ -89,7 +89,7 @@ export const BTN = styled.a`
     height: 50px;
     margin: 10px;
     padding: 10px 20px;
-    box-shadow: ${boxshadow4};
+    box-shadow: ${box_shadow4};
     border: ${cardBorder};
     border-radius: 5px;
     font: 600 18px 'Quicksand', sans-serif;
