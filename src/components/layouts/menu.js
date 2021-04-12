@@ -4,7 +4,8 @@ import { Link } from 'gatsby';
 import { useSpring, animated } from 'react-spring';
 import { Close } from '../utilities/Icons';
 
-const Menu = ({isNavOpen, setNavOpen}) => {
+const Menu = (props) => {
+    const { isNavOpen, setNavOpen } = props;
     const menuAnime = useSpring({
         transform: isNavOpen
         ? `translate3d(0,0,0) scale(1)`
@@ -28,14 +29,19 @@ const Menu = ({isNavOpen, setNavOpen}) => {
 export default Menu;
 
 const List = styled.ul`
-    list-style-type: none;
     li {
+        list-style-type: none;
 
     }
     `;
 
 export const NavItem = styled(Link)`
     text-decoration: none;
-    color: white;
-    padding: 20px;
+    font: 24px 'Quicksand', sans-serif;
+    padding: 20px 30px;
+    color: ${props => props.theme.fontColor};
+
+    & :hover {
+        border-bottom: 1px solid ${props => props.theme.tagLineColor};
+    }
 `;

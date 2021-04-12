@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactMe from '../layouts/emailjs';
+import { Section } from '../layouts/section';
 import { Flex, title, yellow3, below } from '../utilities';
 
 
-const Contact = () => {
+const Contact = (props) => {
     return ( 
-            <Box>
+            <Section>
                 <Headline>Let's work together!</Headline>
                 <ContactMe />
-            </Box>
+            </Section>
      );
 }
  
@@ -24,7 +25,7 @@ const Box = styled.div`
 const Headline = styled.h3`
     text-align: center;
     font-family: ${title};
-    color: ${yellow3};
+    color: ${props => props.theme.titleColor};
     margin: 2.5% 1% 1%;
     ${below.large`
         font-size: 2.4rem;

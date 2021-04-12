@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { ThemeProvider } from 'styled-components';
- 
+import "@fontsource/quicksand"
+import "@fontsource/rock-salt"
+import "@fontsource/josefin-sans"
  // import { useStaticQuery, graphql } from "gatsby"
  
  import Header from './header';
  import Footer from "./footer";
  import Menu from './menu';
  
- const Layout = ({ children }) => {
-  const [isNavOpen, setNavOpen] = useState(false);
+ const Layout = (props) => {
+   const { children } = props;
+   const [isNavOpen, setNavOpen] = useState(false);
+
    
    return (
      <>
-     <ThemeProvider theme={{ mode: 'dark' }}>
        <Header isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
        <Menu isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
        <main>
          {children}
        </main>
        <Footer />
-     </ThemeProvider>
      </>
    )
  }
