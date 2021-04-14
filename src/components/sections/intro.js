@@ -33,6 +33,7 @@ const Image = styled.img`
 
 const TextBox = styled.div`
     width: 50%;
+    padding: 2%;
 `;
 
 const Heading = styled.h1`
