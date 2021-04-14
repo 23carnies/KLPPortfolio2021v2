@@ -1,11 +1,13 @@
 export const darkTheme = {
-    pageBackground:'#050505',
-    componentBackground:'#050505',
+    pageBackground:'#0b132b',
+    componentBackground:'#393e46',
     titleColor: '#f2b002',
     tagLineColor: '#007f97',
     fontColor: '#ffffd9',
-    button1Color: '#a4bcbc',
-    button2Color: '#007f97',
+    button1: '#050505',
+    button2: '#393e46',
+    gradient1: '#710b79',
+    gradient2: '#c901a1',
 
 };
 
@@ -15,8 +17,10 @@ export const lightTheme = {
     titleColor: '#6b1914',
     tagLineColor: '#d47006',
     fontColor: '#051126',
-    button1Color: '#4c3f77',
-    button2Color: '#7c587f',
+    button1: '#4c3f77',
+    button2: '#7c587f',
+    gradient1: '#4c3f77',
+    gradient2: '#7c587f',
 };
 
 export const themes = {
