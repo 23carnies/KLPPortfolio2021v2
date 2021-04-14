@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex, white, black, below } from '../utilities';
-import { LgGithub, LgLinkedIn, LgPDF } from '../utilities/icons';
+import { LgGithub, LgLinkedIn, LgPDF } from '../utilities/Icons';
 
  
 
