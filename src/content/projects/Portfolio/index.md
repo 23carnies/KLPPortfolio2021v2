@@ -5,7 +5,7 @@ tech:
   - React Spring
   - Styled Components
 image: 'https://i.imgur.com/Jy3m7Ke.jpg'
-gitLink: 'https://github.com/23carnies/portfolio2021'
+gitLink: 'https://github.com/23carnies/KLPPortfolio2021v2'
 alt: 'Cartoon drawing of Karen'
 info: ''
 ---
