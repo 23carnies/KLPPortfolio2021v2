@@ -8,7 +8,7 @@ import { Hamburger } from '../utilities/Icons';
 
 const Header = ({ isNavOpen, setNavOpen }) => {
     return (
-        <header>
+        <Head>
             <Nav>
                 <div><Img src={Logo} alt="KLP logo" /></div>
                 {/* <div> */}
@@ -21,11 +21,18 @@ const Header = ({ isNavOpen, setNavOpen }) => {
                 <div><Resume href="/resume.pdf">Résumé</Resume></div>
                 <div><Hamburger onClick={() => setNavOpen(!isNavOpen)}/></div>
             </Nav>
-        </header>
+        </Head>
     )
 }
 
 export default Header;
+
+const Head = styled.header`
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+`;
 
 const Nav = styled.nav`
     ${Flex({ai:'center',jc:'space-around'})};
