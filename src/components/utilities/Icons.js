@@ -6,14 +6,14 @@ import { FaRegFilePdf } from '@react-icons/all-files/fa/FaRegFilePdf';
 import { BiMailSend } from '@react-icons/all-files/bi/BiMailSend';
 import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu';
 import { IconContext } from '@react-icons/all-files/';
-import { white, black, box_shadow2, Flex, below } from '../utilities';
+import { white, box_shadow2, Flex, below } from '../utilities';
 import styled, { css } from 'styled-components';
 
 
 export const Close = () => {
   return (
     <IconContext.Provider 
-      value={{ size: '30px', color: `${black}`}}
+      value={{ size: '30px', color: `${props => props.theme.fontColor}`}}
     >
       <AiOutlineClose />
     </IconContext.Provider>
@@ -23,7 +23,7 @@ export const Close = () => {
 export const Hamburger = () => {
   return (
     <IconContext.Provider 
-      value={{ size: '30px', color: `${black}`}}
+      value={{ size: '30px', color: `${props => props.theme.fontColor}`}}
     >
       <GiHamburgerMenu />
     </IconContext.Provider>
