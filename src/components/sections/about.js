@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, yellow3, title, text, below, white } from '../utilities'
+import { Flex, text, below } from '../utilities'
 import { Section } from '../layouts/section'
 
 const About = () => {
 
     return ( 
-            <Section>
+            <Section id="about">
             <Box>
                 <div style={{minWidth: '50%'}}>
                 <AboutText>From my earliest memories, I’ve always loved to learn. I taught myself to play guitar and built a car from scratch with my father as a teenager. I enjoy DIYing and cooking, both allowing my creative side to flourish. I’ve studied multiple human languages and I picked up HTML and CSS in college. For years I built sites for family and friends until deciding to pivot my career to software development. </AboutText>
@@ -22,7 +22,6 @@ export default About;
 
 
 const Box = styled.div`
-    background-image: url('/images/klo-pink-white-race.png');
     ${Flex({ai:'flex-start'})}
     width: 100%;
     ${below.large`

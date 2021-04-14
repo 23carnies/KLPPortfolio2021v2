@@ -6,9 +6,9 @@ import Race from '../../images/klo-racing.png'
 
 const Hero = () => {
     return (
-        <Section type="hero">
-            <Heading>Hi! I'm Karen</Heading>
-            <SubHeading>I am a software engineer based in Atlanta, focused on Front End design, useability, and accessability.</SubHeading>
+        <Section id="hero" type="hero">
+            <Heading type="hero">Hi! I'm Karen</Heading>
+            <SubHeading type="hero">I am a software engineer based in Atlanta, focused on Front End design, useability, and accessability.</SubHeading>
             <Image src={Race} alt="Karen racing a rowing boat" />
         </Section>
     );

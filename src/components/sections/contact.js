@@ -7,7 +7,7 @@ import { Flex, title, yellow3, below } from '../utilities';
 
 const Contact = (props) => {
     return ( 
-            <Section>
+            <Section id="contact">
                 <Headline>Let's work together!</Headline>
                 <ContactMe />
             </Section>

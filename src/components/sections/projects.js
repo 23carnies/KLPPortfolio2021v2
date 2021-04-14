@@ -2,6 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../layouts/projectCard';
+import { Section } from '../layouts/section';
 import { Flex, title, yellow3, below, text,  } from '../utilities';
 
 const Projects = () => {
@@ -33,7 +34,7 @@ const Projects = () => {
     
     return ( 
        
-            <>
+            <Section id="projects">
                 <Headline>My work</Headline>
                 <SubLine>Click card for more info</SubLine>
                 <Note>Some projects are hosted on heroku and may take several seconds to load.</Note>
@@ -53,7 +54,7 @@ const Projects = () => {
                     />)
                 })}
                 </CardGroup>
-            </>
+            </Section>
      );
 }
  
