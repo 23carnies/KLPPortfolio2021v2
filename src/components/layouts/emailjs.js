@@ -2,28 +2,43 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
 
-import { Flex, smLabel, white, label, box_shadow4, btn_active, below } from '../utilities';
+import {
+  Flex,
+  smLabel,
+  label,
+  box_shadow4,
+  btn_active,
+  below,
+} from '../utilities';
 
 export default function ContactMe() {
-
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('process.env.YOUR_SERVICE_ID', 'process.env.YOUR_TEMPLATE_ID', e.target, 'process.env.YOUR_USER_ID')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        'process.env.YOUR_SERVICE_ID',
+        'process.env.YOUR_TEMPLATE_ID',
+        e.target,
+        'process.env.YOUR_USER_ID'
+      )
+      .then(
+        result => {
           console.log(result.text);
-      }, (error) => {
+        },
+        error => {
           console.log(error.text);
-      });
+        }
+      );
   }
 
   return (
     <Form className="contact-form" onSubmit={sendEmail}>
-      <Input type="hidden" name="contact_number"/>
+      <Input type="hidden" name="contact_number" />
       <Label>Name</Label>
-      <Input type="text" name="user_name" placeholder="Your name..."/>
+      <Input type="text" name="user_name" placeholder="Your name..." />
       <Label>Email</Label>
-      <Input type="email" name="user_email" placeholder="Your email..."/>
+      <Input type="email" name="user_email" placeholder="Your email..." />
       <Label>Message</Label>
       <Input name="message" placeholder="Your message..." />
       <Input type="submit" value="Send" />
@@ -32,46 +47,47 @@ export default function ContactMe() {
 }
 
 const Form = styled.form`
-    ${Flex({fd:'column'})};
-    padding: 15px;
-    width: 100%;
-    
-
+  ${Flex({ fd: 'column' })};
+  padding: 15px;
+  width: 100%;
 `;
 
 const Input = styled.input`
-    max-width: 750px;
-    width: ${({type}) => (type === 'submit') ? '13%' : '50%'};
-    background: ${({type}) => (type === 'submit') ? `${props => props.theme.button2}` : `${props => props.theme.fontColor}`};
-    color: ${({type}) => (type === 'submit' ? `${props => props.theme.fontColor}` : `${props => props.theme.componentBackground}`)};
-    font: ${label};
-    padding: 1%;
-    margin: 1.23%;
-    border-radius: ${({type}) => (type === 'submit' ? '12px' : '5px')};
-    box-shadow: ${({type}) => (type === 'submit' ? `${box_shadow4}` : 'none')};
-    ${below.xLarge`
+  max-width: 750px;
+  width: ${({ type }) => (type === 'submit' ? '13%' : '50%')};
+  background: ${({ type }) =>
+    type === 'submit'
+      ? `${props => props.theme.button2}`
+      : `${props => props.theme.fontColor}`};
+  color: ${({ type }) =>
+    type === 'submit'
+      ? `${props => props.theme.fontColor}`
+      : `${props => props.theme.componentBackground}`};
+  font: ${label};
+  padding: 1%;
+  margin: 1.23%;
+  border-radius: ${({ type }) => (type === 'submit' ? '12px' : '5px')};
+  box-shadow: ${({ type }) => (type === 'submit' ? `${box_shadow4}` : 'none')};
+  ${below.xLarge`
       max-width: 650px;
     `}
-    ${below.large`
+  ${below.large`
       max-width: 500px;
     `}
     ${below.medium`
       font: ${smLabel};
       padding: 0.8%;
-      width: ${({type}) => (type === 'submit') ? '23%' : '90%'};
+      width: ${({ type }) => (type === 'submit' ? '23%' : '90%')};
     `}
     :hover {
-        box-shadow: ${({type}) => (type === 'submit' ? `${btn_active}` : 'none')};
-
-    }
-
-    
+    box-shadow: ${({ type }) => (type === 'submit' ? `${btn_active}` : 'none')};
+  }
 `;
 
 const Label = styled.label`
-    color: ${props => props.theme.fontColor};
-    font: ${label};
-    ${below.medium`
+  color: ${props => props.theme.fontColor};
+  font: ${label};
+  ${below.medium`
       font: ${smLabel};
     `}
 `;

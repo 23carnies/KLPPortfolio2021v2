@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../layouts/projectCard';
 import { Section } from '../layouts/section';
-import { Flex, title, yellow3, below, text,  } from '../utilities';
+import { Flex, title, below, text,  } from '../utilities';
 
 const Projects = () => {
     const data = useStaticQuery(graphql`

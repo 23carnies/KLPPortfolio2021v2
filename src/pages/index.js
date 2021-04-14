@@ -5,7 +5,8 @@ import About from '../components/sections/about';
 import Projects from '../components/sections/projects';
 import Contact from '../components/sections/contact';
 import Intro from '../components/sections/intro';
-import { themes } from '../components/utilities'
+import { themes } from '../components/utilities';
+
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../../Global';
 
@@ -23,6 +24,5 @@ export default function Home() {
         <Contact />
       </Layout>
     </ThemeProvider>
-
   );
 }
