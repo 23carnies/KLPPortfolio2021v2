@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby'
 import styled from 'styled-components';
-import { Flex } from '../utilities';
+import { below, Flex } from '../utilities';
 import { NavItem } from './menu';
 import Logo from '../../images/logo.svg'
 import { Hamburger } from '../utilities/Icons';
@@ -11,13 +11,13 @@ const Header = ({ isNavOpen, setNavOpen }) => {
         <header>
             <Nav>
                 <div><Img src={Logo} alt="KLP logo" /></div>
-                <div>
-                    <ul>
-                        <NavItem><Link to="/#about">About</Link></NavItem>
-                        <NavItem><Link to="/#projects">Projects</Link></NavItem>
-                        <NavItem><Link to="/#contact">Contact</Link></NavItem>
-                    </ul>
-                </div>
+                {/* <div> */}
+                    <List>
+                        <li><Link to="/#about">About</Link></li>
+                        <li><Link to="/#projects">Projects</Link></li>
+                        <li><Link to="/#contact">Contact</Link></li>
+                    </List>
+                {/* </div> */}
                 <div><Resume href="/resume.pdf">Résumé</Resume></div>
                 <div><Hamburger onClick={() => setNavOpen(!isNavOpen)}/></div>
             </Nav>
@@ -30,6 +30,7 @@ export default Header;
 const Nav = styled.nav`
     ${Flex({ai:'center',jc:'space-around'})};
     background-color: ${props => props.theme.componentBackground};
+    height: 13vh;
 `;
 
 const Img = styled.img`
@@ -37,6 +38,28 @@ const Img = styled.img`
     border-radius: 50%;
 `;
 
+const List = styled.ul`
+    ${Flex};
+    ${below.large`
+        display: none;
+    `}
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        font: 24px 'Quicksand', sans-serif;
+        color: ${props => props.theme.fontColor};
+        padding: 0 18px;
+    }
+`;
+
 const Resume = styled.a`
+    font: 24px 'Quicksand', sans-serif;
     color: ${props => props.theme.fontColor};
+
+    & :hover {
+        border-bottom: 3px solid ${props => props.theme.tagLineColor};
+    }
 `;
