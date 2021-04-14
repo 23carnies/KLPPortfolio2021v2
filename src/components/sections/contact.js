@@ -7,24 +7,22 @@ import { Flex, title, yellow3, below } from '../utilities';
 
 const Contact = (props) => {
     return ( 
-            <Section id="contact">
+            <ContactSection id="contact">
                 <Headline>Let's work together!</Headline>
                 <ContactMe />
-            </Section>
+            </ContactSection>
      );
 }
  
 export default Contact;
 
-const Box = styled.div`
-    ${Flex({fd:'column'})};
-    text-align: center;
-    margin-bottom: 55px;
+const ContactSection = styled(Section)`
+    border-bottom: none;
 `;
 
 const Headline = styled.h3`
     text-align: center;
-    font-family: ${title};
+    /* font-family: ${title}; */
     color: ${props => props.theme.titleColor};
     margin: 2.5% 1% 1%;
     ${below.large`
