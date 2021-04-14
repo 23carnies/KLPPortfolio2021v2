@@ -1,6 +1,7 @@
 import React, { useState,  } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled, { css } from 'styled-components';
+import { Btn } from '../elements/buttons'
 
 import { Flex, below, white, mauve, cardBorder, box_shadow4 } from '../utilities';
 
@@ -27,8 +28,8 @@ const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }
                     <Pgraph>{description}</Pgraph>
                     <Pgraph>{info}</Pgraph>
                     <div style={{margin: 'auto 15px 35px'}}>
-                        <BTN type="open" href={openLink} target="_blank" rel="noreferrer" alt="opens new window to ">Open</BTN>
-                        <BTN href={gitLink} target="_blank" rel="noreferrer" alt="opens new window to ">Github</BTN>
+                        <Btn type="open" href={openLink} target="_blank" rel="noreferrer" alt="opens new window to ">Open</Btn>
+                        <Btn href={gitLink} target="_blank" rel="noreferrer" alt="opens new window to ">Github</Btn>
                     </div>
                         {/* <BTN onClick={() => setCardFlip(!cardFlip)}>Return</BTN> */}
                 </CardBack>
@@ -47,9 +48,9 @@ export const CardFront = styled.div`
     height: 500px;
     border: ${cardBorder};
     border-radius: 70px 3px 70px 3px;
-    background: ${mauve};
     background: linear-gradient(to top, ${props => props.theme.gradient1} 2%,  ${props => props.theme.gradient2} 100%);
     box-shadow: ${box_shadow4};
+    color: ${props => props.theme.fontColor};
     ${below.small`
         width: 330px;
     `}
@@ -70,7 +71,7 @@ export const Image = styled.img`
 
 
 export const Pgraph = styled.p`
-    font: 400 18px 'Quicksand', sans-serif;
+    font: 400 20px 'Quicksand', sans-serif;
     text-align: center;
     line-height: 24px;
     margin: 30px 5px 5px;
@@ -81,29 +82,5 @@ export const HTwo = styled.h2`
     text-align: center;
     line-height: 54px;
     margin: 5px;
-    color: ${white};
-`;
-
-export const BTN = styled.a`
-    width: 100px;
-    height: 50px;
-    margin: 10px;
-    padding: 10px 20px;
-    box-shadow: ${box_shadow4};
-    border: ${cardBorder};
-    border-radius: 5px;
-    font: 600 18px 'Quicksand', sans-serif;
-    cursor: pointer;
-
-    color: ${({type}) => (type === 'open' ? `${props => props.theme.button1}` : `${props => props.theme.button2}`)};
-    background: ${({type}) => (type === 'open' ? `${props => props.theme.button2}` : `${props => props.theme.button1}`)};
-
-    /* ${props => props.disable && css`
-        background: ${({props}) => (props === '')}
-    `} */
-
-    :hover {
-        color: ${({type}) => (type !== 'open' ? `${props => props.theme.button1}` : `${props => props.theme.button2}`)};
-        background: ${({type}) => (type !== 'open' ? `${props => props.theme.button2}` : `${props => props.theme.button1}`)};
-    }
+    color: ${props => props.theme.fontColor};
 `;
