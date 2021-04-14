@@ -25,7 +25,7 @@ const Footer = () => {
 export default Footer;
 
 const Foot = styled.footer`
-    background: ${black};
+    background: ${props => props.theme.pageBackground};
     ${Flex({ai:'center'})};
     max-height: 115px;
     ${below.small`

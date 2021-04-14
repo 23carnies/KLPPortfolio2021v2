@@ -62,8 +62,8 @@ export default Projects;
 
 const Headline = styled.h3`
     text-align: center;
-    font-family: ${title};
-    color: ${yellow3};
+    /* font-family: ${title}; */
+    color: ${props => props.theme.titleColor};
     margin: 1.5% 1% 1%;
     ${below.large`
         font-size: 2.4rem;
@@ -75,14 +75,14 @@ const Headline = styled.h3`
 
 const SubLine = styled.p`
     margin: 0;
-    color: ${yellow3};
-    font-family: ${title};
+    color: ${props => props.theme.tagLineColor};
+    /* font-family: ${title}; */
     
 `;
 
 const Note = styled.p`
-    font: ${text};
-    font-size: 1rem;
+    /* font: ${text};
+    font-size: 1rem; */
 `;
 
 const CardGroup = styled.section`

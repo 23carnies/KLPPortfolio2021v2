@@ -2,7 +2,7 @@ import React, { useState,  } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled, { css } from 'styled-components';
 
-import { Flex, box_shadow4, below, white, violet, mauve, cardBorder, box_shadow3 } from '../utilities';
+import { Flex, box_shadow4, below, white, violet, mauve, cardBorder, box_shadow4 } from '../utilities';
 
 const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }) => {
     const [cardFlip, setCardFlip] = useState(false);
@@ -48,8 +48,8 @@ export const CardFront = styled.div`
     border: ${cardBorder};
     border-radius: 70px 3px 70px 3px;
     background: ${mauve};
-    background: linear-gradient(to top, ${mauve} 2%,  #ff5126 100%);
-    box-shadow: ${box_shadow3};
+    background: linear-gradient(to top, ${props => props.theme.gradient1} 2%,  ${props => props.theme.gradient2} 100%);
+    box-shadow: ${box_shadow4};
     ${below.small`
         width: 330px;
     `}
@@ -95,15 +95,15 @@ export const BTN = styled.a`
     font: 600 18px 'Quicksand', sans-serif;
     cursor: pointer;
 
-    color: ${({type}) => (type === 'open' ? `${white}` : `${violet}`)};
-    background: ${({type}) => (type === 'open' ? `${violet}` : `${white}`)};
+    color: ${({type}) => (type === 'open' ? `${props => props.theme.button1}` : `${props => props.theme.button2}`)};
+    background: ${({type}) => (type === 'open' ? `${props => props.theme.button2}` : `${props => props.theme.button1}`)};
 
     /* ${props => props.disable && css`
         background: ${({props}) => (props === '')}
     `} */
 
     :hover {
-        color: ${({type}) => (type !== 'open' ? `${white}` : `${violet}`)};
-        background: ${({type}) => (type !== 'open' ? `${violet}` : `${white}`)};
+        color: ${({type}) => (type !== 'open' ? `${props => props.theme.button1}` : `${props => props.theme.button2}`)};
+        background: ${({type}) => (type !== 'open' ? `${props => props.theme.button2}` : `${props => props.theme.button1}`)};
     }
 `;

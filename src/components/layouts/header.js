@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components';
 import { below, Flex } from '../utilities';
 import { NavItem } from './menu';
-import Logo from '../../images/logo.svg'
+import Logo from '../../images/clearLogo.png'
 import { Hamburger } from '../utilities/Icons';
 
 const Header = ({ isNavOpen, setNavOpen }) => {
@@ -29,7 +29,7 @@ export default Header;
 
 const Nav = styled.nav`
     ${Flex({ai:'center',jc:'space-around'})};
-    background-color: ${props => props.theme.componentBackground};
+    background-color: ${props => props.theme.pageBackground};
     height: 13vh;
 `;
 
@@ -52,12 +52,16 @@ const List = styled.ul`
         font: 24px 'Quicksand', sans-serif;
         color: ${props => props.theme.fontColor};
         padding: 0 18px;
+        & :hover {
+        border-bottom: 3px solid ${props => props.theme.tagLineColor};
+    }
     }
 `;
 
 const Resume = styled.a`
     font: 24px 'Quicksand', sans-serif;
     color: ${props => props.theme.fontColor};
+    padding: 0 18px;
 
     & :hover {
         border-bottom: 3px solid ${props => props.theme.tagLineColor};

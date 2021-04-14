@@ -42,6 +42,6 @@ export const NavItem = styled(Link)`
     color: ${props => props.theme.fontColor};
 
     & :hover {
-        border-bottom: 1px solid ${props => props.theme.tagLineColor};
+        border-bottom: 3px solid ${props => props.theme.tagLineColor};
     }
 `;
