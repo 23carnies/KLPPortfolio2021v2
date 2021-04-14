@@ -15,17 +15,14 @@ body {
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Quicksand', Helvetica, sans-serif;
+  font-family: 'Josefin Sans', Helvetica, sans-serif;
   font-weight: normal;
-  /* word-wrap: break-word; */
+  background-color: ${props => props.theme.componentBackground};
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  background-color: #000000;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 }
 
 a {
@@ -36,7 +33,7 @@ a {
 p,a,h1,h2,h3,h4,h5,h6 {
   z-index: 10;
   font-family: 'Josefin Sans', sans-serif;
-  color: #ffffd9;
+  color: ${props => props.theme.fontColor};
   text-align: center;
 }
 p, a {
