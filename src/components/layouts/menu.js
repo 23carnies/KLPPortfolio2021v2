@@ -1,44 +1,54 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { useSpring, animated } from 'react-spring';
 import { Close } from '../utilities/Icons';
+import { animated } from 'react-spring';
+import './menu.css';
 
-const Menu = props => {
-  const { isNavOpen, setNavOpen } = props;
-  const menuAnime = useSpring({
-    transform: isNavOpen
-      ? `translate3d(0,0,0) scale(1)`
-      : `translate3d(100%,0,0) scale(0.6)`,
-  });
+const Menu = ({ toggleMenu, menuAnime }) => {
+  // const { isMenuOpen, setMenuOpen } = props;
+
 
   return (
-    <animated.div style={menuAnime}>
-      <button onClick={() => setNavOpen(false)}>
-        <Close />
-      </button>
-      <List>
-        <li>
-          <NavItem onClick={() => setNavOpen(false)} to="/#about">
-            About
-          </NavItem>
-        </li>
-        <li>
-          <NavItem onClick={() => setNavOpen(false)} to="/#projects">
-            Projects
-          </NavItem>
-        </li>
-        <li>
-          <NavItem onClick={() => setNavOpen(false)} to="/#contact">
-            Contact
-          </NavItem>
-        </li>
-      </List>
+    <animated.div style={menuAnime} className="nav-wrapper">
+      <NavWrapper >
+        <CloseBtn onClick={toggleMenu}>
+          <Close />
+        </CloseBtn>
+        <List>
+          <li>
+            <NavItem onClick={toggleMenu} to="/#about">
+              About
+            </NavItem>
+          </li>
+          <li>
+            <NavItem onClick={toggleMenu} to="/#projects">
+              Projects
+            </NavItem>
+          </li>
+          <li>
+            <NavItem onClick={toggleMenu} to="/#contact">
+              Contact
+            </NavItem>
+          </li>
+        </List>
+
+      </NavWrapper>
     </animated.div>
   );
 };
 
 export default Menu;
+
+const NavWrapper = styled.div`
+
+    background: ${props => props.theme.pageBackground};
+    color: ${props => props.theme.fontColor};
+`;
+
+const CloseBtn = styled.button`
+  margin-top: 50px;
+`;
 
 const List = styled.ul`
   li {
@@ -48,11 +58,13 @@ const List = styled.ul`
 
 export const NavItem = styled(Link)`
   text-decoration: none;
-  font: 24px 'Quicksand', sans-serif;
-  padding: 20px 30px;
-  color: ${props => props.theme.fontColor};
+  font: 36px 'Quicksand', sans-serif;
+  padding: 15px 0;
+  margin: 80px auto;
+  color: ${props => props.theme.titleColor};
 
   & :hover {
     border-bottom: 3px solid ${props => props.theme.tagLineColor};
   }
 `;
+

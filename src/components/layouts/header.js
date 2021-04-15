@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { below, Flex } from '../utilities';
+import { above, below, Flex } from '../utilities';
 import Logo from '../../images/clearLogo.png';
 import { Hamburger } from '../utilities/Icons';
 
-const Header = ({ isNavOpen, setNavOpen }) => {
+
+const Header = ({ toggleMenu, menuAnime }) => {
+ 
+
+
   return (
     <Head>
       <Nav>
@@ -27,7 +31,7 @@ const Header = ({ isNavOpen, setNavOpen }) => {
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
         <div>
-          <Hamburger onClick={() => setNavOpen(!isNavOpen)} />
+          <HamBtn onClick={toggleMenu} ><Hamburger /></HamBtn>
         </div>
       </Nav>
     </Head>
@@ -56,7 +60,7 @@ const Img = styled.img`
 
 const List = styled.ul`
   ${Flex};
-  ${below.large`
+  ${below.medium`
         display: none;
     `}
 
@@ -82,4 +86,12 @@ const Resume = styled.a`
   & :hover {
     border-bottom: 3px solid ${props => props.theme.tagLineColor};
   }
+`;
+
+const HamBtn = styled.button`
+  border: none;
+  background: transparent;
+  ${above.medium`
+    display: none;
+  `}
 `;
