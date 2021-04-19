@@ -9,9 +9,9 @@ import { Sun, Moon } from '../utilities/Icons';
 
 
 
-const Header = ({ toggleMenu, theme, setTheme }) => {
+const Header = ({ isMenuOpen, setIsMenuOpen, theme, setTheme }) => {
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
-
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
 
   return (
@@ -38,11 +38,8 @@ const Header = ({ toggleMenu, theme, setTheme }) => {
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
         <ToggleBtn onClick={toggleTheme}>
-          {
-            theme === 'light' ? <Moon /> : <Sun />
-          }
-          </ToggleBtn>
-
+          {theme === 'light' ? <Moon /> : <Sun />}
+        </ToggleBtn>
         <div>
           <HamBtn onClick={toggleMenu} ><Hamburger /></HamBtn>
         </div>
@@ -82,7 +79,7 @@ const List = styled.ul`
   }
 
   a {
-    font: 24px 'Quicksand', sans-serif;
+    font: 600 24px 'Quicksand', sans-serif;
     color: ${props => props.theme.fontColor};
     padding: 0 18px;
     & :hover {
@@ -92,7 +89,7 @@ const List = styled.ul`
 `;
 
 const Resume = styled.a`
-  font: 24px 'Quicksand', sans-serif;
+  font: 600 24px 'Quicksand', sans-serif;
   color: ${props => props.theme.fontColor};
   padding: 0 18px;
 

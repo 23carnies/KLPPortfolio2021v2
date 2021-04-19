@@ -14,13 +14,13 @@ const Layout = (props) => {
   const { children, theme, setTheme } = props;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   
 
   return (
     <>
-      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}  theme={theme} setTheme={setTheme} />
-      <Menu toggleMenu={toggleMenu} />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}  theme={theme} setTheme={setTheme} />
+      <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <main>{children}</main>
       <Footer />
     </>

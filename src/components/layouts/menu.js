@@ -5,7 +5,8 @@ import { Close } from '../utilities/Icons';
 import { useSpring, animated } from 'react-spring';
 import './menu.css';
 
-const Menu = ({ toggleMenu, isMenuOpen }) => {
+const Menu = ({ isMenuOpen, setIsMenuOpen }) => {
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const menuAnime = useSpring({
     transform: isMenuOpen
       ? `translate3d(0,0,0) scale(1)`
