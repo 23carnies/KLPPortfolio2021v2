@@ -19,10 +19,10 @@ const Layout = (props) => {
 
   return (
     <>
-      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}  theme={theme} setTheme={setTheme} />
       <Menu toggleMenu={toggleMenu} />
       <main>{children}</main>
-      <Footer theme={theme} setTheme={setTheme}/>
+      <Footer />
     </>
   );
 };

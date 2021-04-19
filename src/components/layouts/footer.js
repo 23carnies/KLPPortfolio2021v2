@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ToggleBtn } from '../elements/buttons';
 import { Flex, below } from '../utilities';
 import { LgGithub, LgLinkedIn, LgPDF } from '../utilities/Icons';
 
-const Footer = ({ theme, setTheme }) => {
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+const Footer = () => {
 
   return (
     <Foot>
@@ -34,7 +32,6 @@ const Footer = ({ theme, setTheme }) => {
         >
           <LgPDF />
         </a>
-        <ToggleBtn onClick={toggleTheme}>Mode</ToggleBtn>
       </FootDiv>
       <FootP>
         © {new Date().getFullYear()} Karen Lobin Perkins

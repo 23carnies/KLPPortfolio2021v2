@@ -4,10 +4,13 @@ import styled from 'styled-components';
 import { above, below, Flex } from '../utilities';
 import Logo from '../../images/clearLogo.png';
 import { Hamburger } from '../utilities/Icons';
+import { ToggleBtn } from '../elements/buttons';
 
 
-const Header = ({ toggleMenu, menuAnime }) => {
- 
+
+const Header = ({ toggleMenu, theme, setTheme }) => {
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+
 
 
   return (
@@ -33,6 +36,8 @@ const Header = ({ toggleMenu, menuAnime }) => {
         <div>
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
+        <ToggleBtn onClick={toggleTheme}>Mode</ToggleBtn>
+
         <div>
           <HamBtn onClick={toggleMenu} ><Hamburger /></HamBtn>
         </div>
