@@ -1,9 +1,9 @@
 import React, { useState,  } from 'react';
 import { useSpring, animated } from 'react-spring';
-import styled, { css } from 'styled-components';
-import { Btn } from '../elements/buttons'
+import styled from 'styled-components';
+import { Btn } from '../../elements/buttons'
 
-import { Flex, below, white, mauve, cardBorder, box_shadow4 } from '../utilities';
+import { Flex, below, cardBorder, box_shadow4 } from '../../utilities';
 
 const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }) => {
     const [cardFlip, setCardFlip] = useState(false);
@@ -19,7 +19,6 @@ const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }
                 <CardFront>
                     <Image src={image} alt={alt} />
                     <HTwo>{title}</HTwo>
-                    {/* <BTN onClick={() => setCardFlip(!cardFlip)}>More Info</BTN> */}
                 </CardFront>
             </animated.div>
            
@@ -31,7 +30,6 @@ const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }
                         <Btn type="open" href={openLink} target="_blank" rel="noreferrer" alt="opens new window to ">Open</Btn>
                         <Btn href={gitLink} target="_blank" rel="noreferrer" alt="opens new window to ">Github</Btn>
                     </div>
-                        {/* <BTN onClick={() => setCardFlip(!cardFlip)}>Return</BTN> */}
                 </CardBack>
            </animated.div>
        </div>
@@ -68,7 +66,6 @@ export const Image = styled.img`
     border: ${cardBorder};
     border-radius: 5px;
 `;
-
 
 export const Pgraph = styled.p`
     font: 400 20px 'Quicksand', sans-serif;
