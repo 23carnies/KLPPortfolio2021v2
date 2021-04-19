@@ -22,7 +22,7 @@ const Card = styled.div`
     ${Flex({fd:'column'})};
     width: 560px;
     border-radius: 12px;
-    background: ${props => props.theme.pageBackground};
+    background: ${props => props.theme.gradient2};
     margin: 25px;
     ${below.xSmall`
       width: 400px;
