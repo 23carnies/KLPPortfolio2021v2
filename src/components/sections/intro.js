@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section } from '../layouts/section';
 import { below, Flex } from '../utilities';
+import { Heading, SubHeading } from '../elements/headings';
 import styled from 'styled-components';
 import Iceland from '../../images/klo-iceland.jpg';
 
@@ -36,7 +37,7 @@ const Image = styled.img`
   margin: 1%;
   border: 2px inset ${props => props.theme.pageBackground};
   ${below.small`
-    width: 85%;
+    width: 80%;
     margin: 5% 0;
   `}
 `;
@@ -45,21 +46,9 @@ const TextBox = styled.div`
   width: 50%;
   padding: 2%;
   ${below.small`
-    width: 90%;
+    width: 80%;
     padding: 0 1%;
   `}
 `;
 
-const Heading = styled.h1`
-  color: ${props => props.theme.titleColor};
-  font: 700 36px 'Josefin Sans', sans-serif;
-  ${below.small`
-    line-height: 1rem;
-    margin: 1rem 0;
-  `}
-`;
 
-const SubHeading = styled.h2`
-  color: ${props => props.theme.tagLineColor};
-  font: 700 28px 'Josefin Sans', sans-serif;
-`;

@@ -7,7 +7,6 @@ const About = () => {
   return (
     <Section id="about">
       <Box>
-        <div style={{ minWidth: '50%' }}>
           <AboutText>
             From my earliest memories, I’ve always loved to learn. I taught
             myself to play guitar and built a car from scratch with my father as
@@ -28,7 +27,6 @@ const About = () => {
             spoken languages, travel, and fitness, I want to see the world; and
             see what positive change I can be in it.
           </AboutText>
-        </div>
       </Box>
     </Section>
   );
@@ -37,7 +35,7 @@ const About = () => {
 export default About;
 
 const Box = styled.div`
-  ${Flex({ ai: 'flex-start' })}
+  ${Flex({ fd:'column' })}
   width: 100%;
   ${below.large`
         ${Flex({ fd: 'row', fw: 'wrap' })};
@@ -46,8 +44,7 @@ const Box = styled.div`
 
 const AboutText = styled.p`
   font: ${text};
-  max-width: 95%;
-  margin: 40px 20px;
+  max-width: 90%;
   ${below.large`
         font-size: 1.5rem;
     `}
