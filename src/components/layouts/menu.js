@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Close } from '../utilities/Icons';
-import { animated } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import './menu.css';
 
-const Menu = ({ toggleMenu, menuAnime }) => {
-  // const { isMenuOpen, setMenuOpen } = props;
+const Menu = ({ toggleMenu, isMenuOpen }) => {
+  const menuAnime = useSpring({
+    transform: isMenuOpen
+      ? `translate3d(0,0,0) scale(1)`
+      : `translate3d(100%,0,0) scale(0.6)`,
+  });
 
 
   return (
