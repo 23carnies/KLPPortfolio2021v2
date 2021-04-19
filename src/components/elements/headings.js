@@ -13,6 +13,7 @@ export const Heading = styled.h1`
 export const SubHeading = styled.h2`
   color: ${props => props.theme.tagLineColor};
   font: 700 28px 'Josefin Sans', sans-serif;
+  line-height: 1.4;
 `;
 
 export const Headline = styled.h3`
