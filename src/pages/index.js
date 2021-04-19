@@ -14,13 +14,13 @@ import GlobalStyle from '../../GlobalStyle';
 export default function Home() {
   // const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const [theme, setTheme] = useState('light');
-  // const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  
 
 
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <Layout >
+      <Layout theme={theme} setTheme={setTheme}>
         <Intro />
         <Hero />
         <About />
