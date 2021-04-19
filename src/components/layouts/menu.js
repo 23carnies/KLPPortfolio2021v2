@@ -27,6 +27,11 @@ const Menu = ({ toggleMenu, menuAnime }) => {
             </NavItem>
           </li>
           <li>
+            <NavItem onClick={toggleMenu} to="/#talks">
+              Talks
+            </NavItem>
+          </li>
+          <li>
             <NavItem onClick={toggleMenu} to="/#contact">
               Contact
             </NavItem>

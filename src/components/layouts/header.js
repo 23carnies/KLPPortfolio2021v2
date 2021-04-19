@@ -24,6 +24,9 @@ const Header = ({ toggleMenu, menuAnime }) => {
             <Link to="/#projects">Projects</Link>
           </li>
           <li>
+            <Link to="/#talks">Talks</Link>
+          </li>
+          <li>
             <Link to="/#contact">Contact</Link>
           </li>
         </List>
