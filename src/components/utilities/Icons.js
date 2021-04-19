@@ -33,8 +33,8 @@ export const Hamburger = () => {
 
 export const Sun = () => {
   return (
-    <IconContext.Provider value={{ size: '45px', color: `${white}` }}>
-      <IconCircle bkColor="git">
+    <IconContext.Provider value={{ size: '35px', color: `${props => props.theme.titleColor}` }}>
+      <IconCircle bkColor='yellow'>
         <FiSun />
       </IconCircle>
     </IconContext.Provider>
@@ -43,8 +43,8 @@ export const Sun = () => {
 
 export const Moon = () => {
   return (
-    <IconContext.Provider value={{ size: '45px', color: `${white}` }}>
-      <IconCircle bkColor="git">
+    <IconContext.Provider value={{ size: '35px', color: `${props => props.theme.titleColor}` }}>
+      <IconCircle bkColor="moon">
         <BiMoon />
       </IconCircle>
     </IconContext.Provider>
@@ -74,7 +74,7 @@ export const LgLinkedIn = () => {
 export const LgPDF = () => {
   return (
     <IconContext.Provider value={{ color: `${white}`, size: '45px' }}>
-      <IconCircle>
+      <IconCircle bkColor="res">
         <FaRegFilePdf />
       </IconCircle>
     </IconContext.Provider>
@@ -91,9 +91,12 @@ export const LgMail = () => {
   );
 };
 
+// const Circle = ({ ...style }) => <div style={style}></div>
+
 export const IconCircle = styled.div`
   background: ${({ bkColor }) =>
-    bkColor === 'git' ? '#6e5494' : bkColor === 'link' ? '#0072b1' : '#ed2224'};
+    bkColor === 'git' ? '#6e5494' : bkColor === 'link' ? '#0072b1' : bkColor === 'res' ? '#ed2224' : bkColor === 'sun' ? 'yellow' : bkColor === 'moon' ? '#FFEEDD' : 'orange'};
+  /* background-color: ${props => props.bkColor || 'orange'}; */
   border-radius: 50%;
   box-shadow: ${box_shadow2};
   width: 80px;
