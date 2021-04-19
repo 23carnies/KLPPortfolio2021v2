@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
-import styled from 'styled-components';
 import LightningCard from '../layouts/cards/lightningCard';
 import { Section } from '../layouts/section';
-import { Headline, SubLine, CardGroup } from '../sections/projects';
+import { SubLine, CardGroup } from '../sections/projects';
+import { Headline } from '../elements/headings';
 
 const LightningTalks = () => {
   const data = useStaticQuery(graphql`

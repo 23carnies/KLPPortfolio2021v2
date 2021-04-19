@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ProjectCard from '../layouts/cards/projectCard';
 import { Section } from '../layouts/section';
 import { Flex, title, below, text } from '../utilities';
+import { Headline } from '../elements/headings';
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -69,29 +70,16 @@ const Projects = () => {
 
 export default Projects;
 
-export const Headline = styled.h3`
-  text-align: center;
-  /* font-family: ${title}; */
-  color: ${props => props.theme.titleColor};
-  margin: 1.5% 1% 1%;
-  ${below.large`
-        font-size: 2.4rem;
-    `}
-  ${below.medium`
-        font-size: 2rem;
-    `}
-`;
-
 export const SubLine = styled.p`
   margin: 0;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: ${props => props.theme.tagLineColor};
   /* font-family: ${title}; */
 `;
 
 const Note = styled.p`
-  /* font: ${text};
-    font-size: 1rem; */
+  font-size: 1.3rem;
+  padding: 0 3%;
 `;
 
 export const CardGroup = styled.section`
