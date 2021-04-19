@@ -1,94 +1,103 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import ProjectCard from '../layouts/projectCard';
+import ProjectCard from '../layouts/cards/projectCard';
 import { Section } from '../layouts/section';
-import { Flex, title, below, text,  } from '../utilities';
+import { Flex, title, below, text } from '../utilities';
 
 const Projects = () => {
-    const data = useStaticQuery(graphql`
-        query Projects {
-            allMarkdownRemark(filter: {fileAbsolutePath: { regex: "/projects/"}}) {
-                edges {
-                    node {
-                        
-                        frontmatter {
-                            alt
-                            gitLink
-                            image
-                            info
-                            openLink
-                            tech
-                            title
-                            }
-                        excerpt
-                        }
-                    }
+  const data = useStaticQuery(graphql`
+    query Projects {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+        edges {
+          node {
+            frontmatter {
+              alt
+              gitLink
+              image
+              info
+              openLink
+              tech
+              title
             }
+            excerpt
+          }
         }
-    `);
+      }
+    }
+  `);
 
-    const highlights = data.allMarkdownRemark.edges.filter(
-        ({node}) => node
-    )
-    
-    return ( 
-       
-            <Section id="projects">
-                <Headline>My work</Headline>
-                <SubLine>Click card for more info</SubLine>
-                <Note>Some projects are hosted on heroku and may take several seconds to load.</Note>
-                <CardGroup>
-                {highlights && highlights.map(({node}, idx) => {
-                    const {excerpt, frontmatter } = node;
-                    const { alt, gitLink, image, info, openLink, tech, title } = frontmatter;
-                    return (<ProjectCard 
-                        key={idx}
-                        title={title}
-                        description={excerpt}
-                        image={image}
-                        openLink={openLink}
-                        gitLink={gitLink}
-                        alt={alt}
-                        info={info}
-                    />)
-                })}
-                </CardGroup>
-            </Section>
-     );
-}
- 
+  const highlights = data.allMarkdownRemark.edges.filter(({ node }) => node);
+
+  return (
+    <Section id="projects">
+      <Headline>My work</Headline>
+      <SubLine>Click card for more info</SubLine>
+      <Note>
+        Some projects are hosted on heroku and may take several seconds to load.
+      </Note>
+      <CardGroup>
+        {highlights &&
+          highlights.map(({ node }, idx) => {
+            const { excerpt, frontmatter } = node;
+            const {
+              alt,
+              gitLink,
+              image,
+              info,
+              openLink,
+              tech,
+              title,
+            } = frontmatter;
+            return (
+              <ProjectCard
+                key={idx}
+                title={title}
+                description={excerpt}
+                image={image}
+                openLink={openLink}
+                gitLink={gitLink}
+                alt={alt}
+                info={info}
+              />
+            );
+          })}
+      </CardGroup>
+    </Section>
+  );
+};
+
 export default Projects;
 
-const Headline = styled.h3`
-    text-align: center;
-    /* font-family: ${title}; */
-    color: ${props => props.theme.titleColor};
-    margin: 1.5% 1% 1%;
-    ${below.large`
+export const Headline = styled.h3`
+  text-align: center;
+  /* font-family: ${title}; */
+  color: ${props => props.theme.titleColor};
+  margin: 1.5% 1% 1%;
+  ${below.large`
         font-size: 2.4rem;
     `}
-    ${below.medium`
+  ${below.medium`
         font-size: 2rem;
     `}
 `;
 
-const SubLine = styled.p`
-    margin: 0;
-    color: ${props => props.theme.tagLineColor};
-    /* font-family: ${title}; */
-    
+export const SubLine = styled.p`
+  margin: 0;
+  font-size: 24px;
+  color: ${props => props.theme.tagLineColor};
+  /* font-family: ${title}; */
 `;
 
 const Note = styled.p`
-    /* font: ${text};
+  /* font: ${text};
     font-size: 1rem; */
 `;
 
-const CardGroup = styled.section`
-    ${Flex({fw:'wrap'})};
-    max-width: 1400px;
-    ${below.xLarge`
+export const CardGroup = styled.section`
+  ${Flex({ fw: 'wrap' })};
+  max-width: 1400px;
+  ${below.xLarge`
         max-width: 1280px;
     `}
 `;

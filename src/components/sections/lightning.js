@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LightningCard from '../layouts/cards/lightningCard';
 import { Section } from '../layouts/section';
-import { Headline, CardGroup } from '../sections/projects';
+import { Headline, SubLine, CardGroup } from '../sections/projects';
 
 const LightningTalks = () => {
   const data = useStaticQuery(graphql`
@@ -32,6 +32,7 @@ const LightningTalks = () => {
  return (
     <Section id="talks">
         <Headline>Lightning Talks</Headline>
+        <SubLine>Short video presenations on topics I'm learning more about.</SubLine>
         <CardGroup>
             {talks && talks.map(({ node }, idx) => {
                 const { excerpt, frontmatter } = node;
