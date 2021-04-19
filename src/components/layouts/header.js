@@ -5,6 +5,7 @@ import { above, below, Flex } from '../utilities';
 import Logo from '../../images/clearLogo.png';
 import { Hamburger } from '../utilities/Icons';
 import { ToggleBtn } from '../elements/buttons';
+import { Sun, Moon } from '../utilities/Icons';
 
 
 
@@ -36,7 +37,11 @@ const Header = ({ toggleMenu, theme, setTheme }) => {
         <div>
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
-        <ToggleBtn onClick={toggleTheme}>Mode</ToggleBtn>
+        <ToggleBtn onClick={toggleTheme}>
+          {
+            theme === 'light' ? <Moon /> : <Sun />
+          }
+          </ToggleBtn>
 
         <div>
           <HamBtn onClick={toggleMenu} ><Hamburger /></HamBtn>
