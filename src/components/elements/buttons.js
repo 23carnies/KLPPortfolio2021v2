@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { box_shadow4, cardBorder } from '../utilities'
+import { box_shadow1, box_shadow4, cardBorder } from '../utilities';
 
 
 export const Btn = styled.a`
@@ -16,15 +16,15 @@ export const Btn = styled.a`
     color: ${props => props.theme.fontColor};
     background: ${props => props.theme.button2};
 
-    :hover {
-        color: ${({type}) => (type !== 'open' ? `${props => props.theme.button1}` : `${props => props.theme.button2}`)};
-        background: ${({type}) => (type !== 'open' ? `${props => props.theme.fontColor}` : `${props => props.theme.button1}`)};
+    &:hover {
+        color: ${props => props.theme.pageBackground};
+        background: ${props => props.theme.button2};
+        box-shadow: ${box_shadow1};
     }
-    transition: all .5s ease;
+    transition: all .4s ease;
 `;
 
-export const ToggleBtn = styled(Btn)`
-    background-color: ${props => props.theme.titleColor};
-    color: ${props => props.theme.pageBackground};
-    border: 2px solid white;
+export const ToggleBtn = styled.button`
+    background: transparent;
+    border: none;
 `;
