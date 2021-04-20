@@ -14,6 +14,7 @@ export const SubHeading = styled.h2`
   color: ${props => props.theme.tagLineColor};
   font: 700 28px 'Josefin Sans', sans-serif;
   line-height: 1.4;
+  padding: 0 3%;
 `;
 
 export const Headline = styled.h3`
