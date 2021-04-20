@@ -9,6 +9,7 @@ import {
   box_shadow4,
   btn_active,
   below,
+  above,
 } from '../utilities';
 
 export default function ContactMe() {
@@ -58,16 +59,16 @@ const Input = styled.input`
   background: ${({ type }) =>
     type === 'submit'
       ? `${props => props.theme.button}`
-      : `${props => props.theme.fontColor}`};
-  color: ${({ type }) =>
-    type === 'submit'
-      ? `${props => props.theme.fontColor}`
-      : `${props => props.theme.componentBackground}`};
+      : `${props => props.theme.titleColor}`};
   font: ${label};
   padding: 1%;
   margin: 1.23%;
   border-radius: ${({ type }) => (type === 'submit' ? '12px' : '5px')};
   box-shadow: ${({ type }) => (type === 'submit' ? `${box_shadow4}` : 'none')};
+  ${above.medium`
+    font-size: 1.2rem;
+    padding: .8%;
+  `}
   ${below.xLarge`
       max-width: 650px;
     `}
