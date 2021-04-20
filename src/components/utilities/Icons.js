@@ -24,7 +24,7 @@ export const Close = () => {
 export const Hamburger = () => {
   return (
     <IconContext.Provider
-      value={{ size: '30px', color: '#13667c' }}
+      value={{ size: '30px', color: '#b5d6b2' }}
     >
       <GiHamburgerMenu />
     </IconContext.Provider>

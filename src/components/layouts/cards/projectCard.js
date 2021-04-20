@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { Btn } from '../../elements/buttons'
 
-import { Flex, below, cardBorder, box_shadow4, imgBorder } from '../../utilities';
+import { Flex, below, box_shadow4 } from '../../utilities';
 
 const ProjectCard = ({ title, description, image, openLink, gitLink, alt, info }) => {
     const [cardFlip, setCardFlip] = useState(false);
@@ -44,7 +44,7 @@ export const CardFront = styled.div`
     padding: 20px;
     width: 370px;
     height: 500px;
-    border: ${cardBorder};
+    border: 1px solid ${props => props.theme.titleColor};
     border-radius: 70px 3px 70px 3px;
     background: linear-gradient(to top, ${props => props.theme.gradient1} 2%,  ${props => props.theme.gradient2} 100%);
     box-shadow: ${box_shadow4};
@@ -63,7 +63,7 @@ export const CardBack = styled(CardFront)`
 
 export const Image = styled.img`
     max-width: 225px;
-    border: ${imgBorder};
+    border: 1px solid ${props => props.theme.fontColor};
     border-radius: 5px;
 `;
 

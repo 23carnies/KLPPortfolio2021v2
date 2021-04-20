@@ -57,7 +57,7 @@ const Input = styled.input`
   width: ${({ type }) => (type === 'submit' ? '13%' : '50%')};
   background: ${({ type }) =>
     type === 'submit'
-      ? `${props => props.theme.button2}`
+      ? `${props => props.theme.button}`
       : `${props => props.theme.fontColor}`};
   color: ${({ type }) =>
     type === 'submit'
