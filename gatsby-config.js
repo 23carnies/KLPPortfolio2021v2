@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Portfolio of Karen Lobin Perkins`,
+    description: `Front End Engineer, Karen Lobin Perkins, resume, example work, and more.`,
+    author: `@23carnies`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,6 +22,13 @@ module.exports = {
         path: `${__dirname}/src/content/projects`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lightningTalks`,
+        path: `${__dirname}/src/content/lightningTalks`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
@@ -37,6 +44,19 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-remark-embed-video`,
+    {
+      resolve: "gatsby-remark-embed-video",
+      options: {
+          width: 400,
+          ratio: 1.77, 
+          height: 400, 
+          related: false,
+          noIframeBorder: true
+          
+      },
+    },
+    `gatsby-remark-images`,
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
