@@ -38,7 +38,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, theme, setTheme }) => {
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
         <ToggleBtn onClick={toggleTheme} aria-hidden="true">
-          {theme === 'light' ? <Moon /> : <Sun />}
+          {theme === 'light' ? <Moon aria-hidden="true" /> : <Sun aria-hidden="true" />}
         </ToggleBtn>
         <div>
           <HamBtn onClick={toggleMenu} onKeyDown={toggleMenu} aria-label="Open Menu"><Hamburger /></HamBtn>

@@ -17,7 +17,7 @@ const Menu = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <animated.div style={menuAnime} className="nav-wrapper">
       <NavWrapper >
-        <CloseBtn onClick={toggleMenu} onKeyDown={toggleMenu} >
+        <CloseBtn onClick={toggleMenu} onKeyDown={toggleMenu} aria-label="Close Menu">
           <Close />
         </CloseBtn>
         <List>
