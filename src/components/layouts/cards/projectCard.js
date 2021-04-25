@@ -22,7 +22,7 @@ const ProjectCard = ({
   });
 
   return (
-    <div onClick={() => setCardFlip(!cardFlip)}>
+    <div onClick={() => setCardFlip(!cardFlip)} onKeyDown={() => setCardFlip(!cardFlip)} >
       <animated.div
         style={{
           opacity,

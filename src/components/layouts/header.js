@@ -18,7 +18,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen, theme, setTheme }) => {
     <Head>
       <Nav>
         <div>
-          <Img src={Logo} alt="KLP logo" />
+          <Link to="/"><Img src={Logo} alt="KLP logo" /></Link>
         </div>
         <List>
           <li>
@@ -37,11 +37,11 @@ const Header = ({ isMenuOpen, setIsMenuOpen, theme, setTheme }) => {
         <div>
           <Resume href="/resume.pdf">Résumé</Resume>
         </div>
-        <ToggleBtn onClick={toggleTheme}>
+        <ToggleBtn onClick={toggleTheme} aria-hidden="true">
           {theme === 'light' ? <Moon /> : <Sun />}
         </ToggleBtn>
         <div>
-          <HamBtn onClick={toggleMenu} ><Hamburger /></HamBtn>
+          <HamBtn onClick={toggleMenu} onKeyDown={toggleMenu} aria-label="Open Menu"><Hamburger /></HamBtn>
         </div>
       </Nav>
     </Head>
@@ -60,7 +60,7 @@ const Head = styled.header`
 const Nav = styled.nav`
   ${Flex({ ai: 'center', jc: 'space-around' })};
   background-color: ${props => props.theme.pageBackground};
-  height: 13vh;
+  /* height: 13vh; */
 `;
 
 const Img = styled.img`

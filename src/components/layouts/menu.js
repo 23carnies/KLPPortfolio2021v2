@@ -17,27 +17,27 @@ const Menu = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <animated.div style={menuAnime} className="nav-wrapper">
       <NavWrapper >
-        <CloseBtn onClick={toggleMenu}>
+        <CloseBtn onClick={toggleMenu} onKeyDown={toggleMenu} >
           <Close />
         </CloseBtn>
         <List>
           <li>
-            <NavItem onClick={toggleMenu} to="/#about">
+            <NavItem onClick={toggleMenu}  onKeyDown={toggleMenu} to="/#about">
               About
             </NavItem>
           </li>
           <li>
-            <NavItem onClick={toggleMenu} to="/#projects">
+            <NavItem onClick={toggleMenu}  onKeyDown={toggleMenu} to="/#projects">
               Projects
             </NavItem>
           </li>
           <li>
-            <NavItem onClick={toggleMenu} to="/#talks">
+            <NavItem onClick={toggleMenu}  onKeyDown={toggleMenu} to="/#talks">
               Talks
             </NavItem>
           </li>
           <li>
-            <NavItem onClick={toggleMenu} to="/#contact">
+            <NavItem onClick={toggleMenu}  onKeyDown={toggleMenu} to="/#contact">
               Contact
             </NavItem>
           </li>

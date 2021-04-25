@@ -12,7 +12,7 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
           href="https://github.com/23carnies"
-          alt="Github logo, opens new window to Karen's Github page"
+          aria-label="Github logo, opens new window to Karen's Github page"
         >
           <LgGithub />
         </a>
@@ -20,7 +20,7 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
           href="https://www.linkedin.com/in/karen-lobin-perkins/"
-          alt="LinkedIn logo, opens new window to Karen's LinkedIn page"
+          aria-label="LinkedIn logo, opens new window to Karen's LinkedIn page"
         >
           <LgLinkedIn />
         </a>
@@ -28,7 +28,7 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
           href="http://23carnies.com/karenLobinPerkinsRes.pdf"
-          alt="link to Karen's resume in pdf format, opens new window"
+          aria-label="link to Karen's resume in pdf format, opens new window"
         >
           <LgPDF />
         </a>
