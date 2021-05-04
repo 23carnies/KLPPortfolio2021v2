@@ -32,8 +32,8 @@ export default function Home() {
         <Intro />
         <Hero />
         <About />
-        <Projects />
         <LightningTalks />
+        <Projects />
         <Contact />
       </Layout>
     </ThemeProvider>
